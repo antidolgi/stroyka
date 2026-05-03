@@ -42,15 +42,19 @@
   <main id="main-content">
     <!-- Hero: 3D сцена через Three.js -->
     <section id="hero" class="hero section">
-      <div id="three-container" class="hero__canvas"></div>
-      <div class="hero__overlay">
-        <h1 class="hero__title" data-splitting>Создаём объекты будущего</h1>
-        <p class="hero__subtitle">Инжиниринг, строительство, энергетика в Вологде</p>
-        <button class="btn btn--primary hero__cta" data-magnetic>
-          <span>Оставить заявку</span>
-        </button>
-      </div>
-    </section>
+  <!-- Видео фон -->
+  <video class="hero__video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+    <source src="assets/video/hero-bg.webm" type="video/webm">
+    <source src="assets/video/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay">
+    <h1 class="hero__title" data-splitting>Создаём объекты будущего</h1>
+    <p class="hero__subtitle">Инжиниринг, строительство, энергетика в Вологде</p>
+    <button class="btn btn--primary hero__cta" data-magnetic>
+      <span>Оставить заявку</span>
+    </button>
+  </div>
+</section>
 
     <!-- Услуги -->
     <section id="services" class="services section">
