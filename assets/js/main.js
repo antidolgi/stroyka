@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Строим шапку и подвал
   buildHeader();
   buildFooter();
+  initCookieConsent();
 
   // 3. Инициализируем компоненты, если их контейнеры есть на странице
   initNavigation();
@@ -118,6 +119,11 @@ function buildFooter() {
         <a href="${CONFIG.company.social.telegram}" target="_blank" rel="noopener">Telegram</a><br>
         <a href="${CONFIG.company.social.vk}" target="_blank" rel="noopener">ВКонтакте</a>
       </div>
+      <div>
+  <h4>Правовая информация</h4>
+  <a href="privacy.html">Политика конфиденциальности</a><br>
+  <a href="terms.html">Согласие на обработку</a>
+</div>
     </div>
     <div class="footer__dev container">
       <span>Разработано в <a href="${CONFIG.developer.url}" target="_blank" rel="noopener">${CONFIG.developer.name}</a></span>
@@ -452,6 +458,37 @@ function initLeafletMap() {
     .addTo(map)
     .bindPopup(`<b>${CONFIG.company.name}</b><br>${CONFIG.company.address}`);
 }
+/* ================================================================
+   Cookie Consent
+   ================================================================ */
+function initCookieConsent() {
+  if (localStorage.getItem('cookiesAccepted')) return;
+
+  const consent = document.createElement('div');
+  consent.className = 'cookie-consent';
+  consent.innerHTML = `
+    <div class="cookie-consent__text">
+      Мы используем файлы cookie. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.
+    </div>
+    <button class="cookie-consent__btn" id="accept-cookies">Принять</button>
+  `;
+  document.body.appendChild(consent);
+
+  // Активируем с задержкой
+  setTimeout(() => consent.classList.add('active'), 500);
+
+  document.getElementById('accept-cookies').onclick = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    consent.classList.remove('active');
+    setTimeout(() => consent.remove(), 400);
+  };
+}
+
+// Вызов в DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  // ... предыдущие вызовы
+  initCookieConsent();
+});
 // ... весь предыдущий код main.js, добавляем в конец после initLeafletMap() ...
 
 /* ================================================================
