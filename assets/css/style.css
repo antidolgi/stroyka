@@ -421,6 +421,211 @@ form textarea {
 form textarea {
   min-height: 100px;
 }
+/* ... весь предыдущий код остаётся, добавляем в конец перед медиа-запросами или внутри них ... */
+
+/* ===== Стили для внутренних страниц ===== */
+.page-hero {
+  background: var(--color-dark);
+  color: #fff;
+  text-align: center;
+  padding: 8rem 0 4rem;
+}
+.page-title {
+  font-size: var(--font-size-h1);
+  margin-bottom: 1rem;
+}
+.page-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Услуги детальные */
+.services-detail .service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: background var(--transition-smooth);
+}
+.services-detail .service-card:hover {
+  background: #f9f9f9;
+}
+.service-card__icon {
+  font-size: 3rem;
+}
+.service-card__desc-full {
+  margin-top: 1rem;
+  color: #555;
+}
+
+/* CTA секция */
+.cta-section {
+  background: var(--color-concrete);
+  text-align: center;
+}
+
+/* Проекты */
+.projects-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.filter-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--grid-gap);
+}
+.project-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.project-card__img {
+  height: 200px;
+  background: #ccc;
+  object-fit: cover;
+}
+.project-card__info {
+  padding: 1.5rem;
+}
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.project-card__category {
+  display: inline-block;
+  background: var(--color-concrete);
+  color: var(--color-dark);
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Модальное окно проекта */
+.project-modal__content {
+  max-width: 800px;
+}
+
+/* Таймлайн (О компании) */
+.timeline__list {
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline__list::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.timeline-item__year {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
+.timeline-item__text {
+  margin-top: 0.3rem;
+}
+
+/* Команда */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+.team-member {
+  text-align: center;
+}
+.team-member__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ddd;
+  margin: 0 auto 1rem;
+  background-size: cover;
+}
+.team-member__name {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.team-member__role {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Контакты */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.contacts-info a {
+  color: var(--color-accent);
+}
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+.contacts-form-wrapper form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 768px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ===== Адаптивность ===== */
 @media (max-width: 768px) {
