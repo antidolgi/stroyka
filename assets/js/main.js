@@ -270,7 +270,7 @@ function initServicesDetail() {
   ];
   container.innerHTML = servicesDetail.map(s => `
     <div class="service-card" id="${s.id}">
-      <div class="service-card__icon" id="lottie-${s.id}" style="width:80px;height:80px;margin:0 auto 1rem;"></div>
+      <div class="service-card__icon" id="lottie-${s.id}" style="width:140px;height:140px;margin:0 auto 1rem;"></div>
       <h3 class="service-card__title">${s.title}</h3>
       <p class="service-card__desc">${s.desc}</p>
       <p class="service-card__desc-full">${s.fullDesc}</p>
