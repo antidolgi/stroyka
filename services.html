@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-config="seo.titleTemplate" data-placeholder="services.title">Услуги | Северный Инжиниринг</title>
+  <meta name="description" content="Полный спектр инженерных и строительных услуг в Вологде: строительство, отделка, слаботочные системы, энергетика.">
+  <meta property="og:title" content="Услуги | Северный Инжиниринг">
+  <meta property="og:description" content="Полный спектр инженерных и строительных услуг в Вологде.">
+  <meta property="og:image" data-config="seo.ogImage">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container">
+        <h1 class="page-title" data-splitting>Наши услуги</h1>
+        <p class="page-subtitle">Инженерный подход к каждому этапу</p>
+      </div>
+    </section>
+
+    <section class="section services-detail" id="services-detail">
+      <div class="container" id="services-detail-container"></div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container text-center">
+        <button class="btn btn--primary" id="cta-services" data-magnetic>Обсудить проект</button>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <div class="modal" id="form-modal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <form id="contact-form">
+        <h3>Оставить заявку</h3>
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Опишите задачу"></textarea>
+        <button type="submit" class="btn btn--primary">Отправить</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>
