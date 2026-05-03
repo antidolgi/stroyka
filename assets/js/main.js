@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   buildFooter();
   initNavigation();
   initLenis();
-  initThreeJS();
   initSplitting();
   initSwiper();
   initMagnetic();
@@ -131,13 +130,6 @@ function initLenis() {
       if (target) lenis.scrollTo(target, { offset: -80 });
     });
   });
-}
-
-function initThreeJS() {
-  const container = document.getElementById('three-container');
-  if (!container || typeof THREE === 'undefined') return;
-  // ... (весь код сцены остаётся без изменений, я сократил для краткости, оставьте ваш предыдущий)
-  // Вставьте сюда функцию initThreeJS из предыдущей версии main.js
 }
 
 function initSplitting() {
