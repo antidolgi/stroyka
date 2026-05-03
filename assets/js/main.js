@@ -289,13 +289,13 @@ function initServicesDetail() {
 function initProjects() {
   const list = document.getElementById('projects-list');
   if (!list) return;
-  const projects = [
-    { title: 'ЖК «Северный»', category: 'building', desc: '10-этажный жилой комплекс', img: 'assets/img/project1.jpg' },
-    { title: 'Бизнес-центр «Вологда-Сити»', category: 'building', desc: 'Отделка 5000 м²', img: 'assets/img/project2.jpg' },
-    { title: 'Завод «Электрон»', category: 'energy', desc: 'Энергоснабжение цеха', img: 'assets/img/project3.jpg' },
-    { title: 'Школа №12', category: 'finishing', desc: 'Капитальный ремонт', img: 'assets/img/project4.jpg' },
-    { title: 'Системы безопасности ТРЦ', category: 'lowcurrent', desc: 'Видеонаблюдение и СКУД', img: 'assets/img/project5.jpg' }
-  ];
+ const projects = [
+  { title: 'Жилой комплекс «Новый берег»', category: 'building', desc: 'Монолитное строительство 14 этажей', img: 'assets/img/project1.jpg' },
+  { title: 'Отделка пентхауса в центре', category: 'finishing', desc: 'Премиальный ремонт 320 м²', img: 'assets/img/project3.jpg' },
+  { title: 'Электроснабжение производства', category: 'energy', desc: 'Трансформаторная подстанция', img: 'assets/img/project2.jpg' },
+  { title: 'Капитальный ремонт офисов', category: 'finishing', desc: 'Отделка 2500 м² в бизнес-центре', img: 'assets/img/project4.jpg' },
+  { title: 'Умный дом с видеонаблюдением', category: 'lowcurrent', desc: 'СКУД, сигнализация, контроль доступа', img: 'assets/img/project5.jpg' }
+];
   function renderProjects(filter = 'all') {
     const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
     list.innerHTML = filtered.map(p => `
