@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-config="seo.titleTemplate" data-placeholder="slogan">Создаём объекты будущего | Северный Инжиниринг</title>
+  <meta name="description" data-config="seo.description">
+  <meta name="keywords" data-config="seo.keywords">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" data-config="seo.siteUrl">
+  <meta property="og:title" data-config="company.slogan">
+  <meta property="og:description" data-config="seo.description">
+  <meta property="og:image" data-config="seo.ogImage">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" data-config="seo.siteUrl">
+  <meta property="twitter:title" data-config="company.slogan">
+  <meta property="twitter:description" data-config="seo.description">
+  <meta property="twitter:image" data-config="seo.ogImage">
+
+  <!-- Favicon заглушка -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Шапка будет вставлена через JS -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <!-- Hero: 3D сцена через Three.js -->
+    <section id="hero" class="hero section">
+      <div id="three-container" class="hero__canvas"></div>
+      <div class="hero__overlay">
+        <h1 class="hero__title" data-splitting>Создаём объекты будущего</h1>
+        <p class="hero__subtitle">Инжиниринг, строительство, энергетика в Вологде</p>
+        <button class="btn btn--primary hero__cta" data-magnetic>
+          <span>Оставить заявку</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services section">
+      <div class="container">
+        <h2 class="section-title" data-splitting>Наши компетенции</h2>
+        <div class="services__grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- Преимущества в цифрах -->
+    <section id="numbers" class="numbers section">
+      <div class="container">
+        <div class="numbers__list" id="numbers-list"></div>
+      </div>
+    </section>
+
+    <!-- Карта объектов -->
+    <section id="map" class="map section">
+      <div class="container">
+        <h2 class="section-title" data-splitting>География проектов</h2>
+        <div id="leaflet-map" class="map__container"></div>
+      </div>
+    </section>
+
+    <!-- Отзывы / партнёры -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container">
+        <h2 class="section-title" data-splitting>Нам доверяют</h2>
+        <div class="swiper" id="testimonials-swiper">
+          <div class="swiper-wrapper" id="testimonials-wrapper"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кнопка заявки фиксированная или в конце -->
+    <div class="floating-cta">
+      <button class="btn btn--primary" id="global-cta" data-magnetic>Обсудить проект</button>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Модальное окно формы -->
+  <div class="modal" id="form-modal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <form id="contact-form">
+        <h3>Оставить заявку</h3>
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Опишите задачу"></textarea>
+        <button type="submit" class="btn btn--primary">Отправить</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>
