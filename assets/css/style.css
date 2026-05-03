@@ -140,7 +140,6 @@ img, video {
 .btn--primary:active {
   transform: translateY(0);
 }
-/* магнитный эффект усиливается js, здесь только сброс */
 
 /* ===== Шапка ===== */
 .header {
@@ -421,7 +420,6 @@ form textarea {
 form textarea {
   min-height: 100px;
 }
-/* ... весь предыдущий код остаётся, добавляем в конец перед медиа-запросами или внутри них ... */
 
 /* ===== Стили для внутренних страниц ===== */
 .page-hero {
@@ -452,7 +450,7 @@ form textarea {
 .services-detail .service-card:hover {
   background: #f9f9f9;
 }
-.service-card__icon {
+.services-detail .service-card__icon {
   font-size: 3rem;
 }
 .service-card__desc-full {
@@ -618,15 +616,6 @@ form textarea {
   box-shadow: var(--shadow-card);
 }
 
-@media (max-width: 768px) {
-  .contacts-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-list {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Узкий контейнер для текстовых страниц */
 .narrow {
   max-width: 800px;
@@ -690,5 +679,11 @@ form textarea {
   }
   .hero__title {
     font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-list {
+    grid-template-columns: 1fr;
   }
 }
